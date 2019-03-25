@@ -40,9 +40,9 @@ public class DeleteStudent extends HttpServlet {
 
 		iStudentService.deleteStudentByID(SID);
 
-		// 重定向到servlet 类：  QueryAllStudent
-		
-		response.sendRedirect(request.getContextPath()+"/QueryAllStudent");
+		// 重定向到servlet 类： QueryAllStudent
+
+		response.sendRedirect(request.getContextPath() + "/QueryAllStudent");
 
 	}
 
