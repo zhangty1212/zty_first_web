@@ -1,0 +1,40 @@
+
+<!-- (1) c3p0连接mysql8.0.12 配置问题 : 重点注意 jdbcUrl 和 driverClass 的 property 属性值书写方式，与原有老版本的区别；
+
+             具体参数设置，请参考链接： https://blog.csdn.net/qq_38815856/article/details/80998902 
+             
+    (2) initialPoolSize: 初始化时获取连接数，取值应在minPoolSize与maxPoolSize之间。Default: 3 
+        minPoolSize:     连接池中保留的最小连接数，默认为：3
+        maxPoolSize:     连接池中保留的最大连接数。默认值: 15
+        maxIdleTime:     最大空闲时间，多少秒内未使用则连接被丢弃。若为0则永不丢弃。默认值: 0   
+        
+     (3) 注意： jdbcUrl 属性值虽然很长，但千万不要换行，换行会报错 —— ——  
+         Caused by: com.mchange.v2.resourcepool.CannotAcquireResourceException: A ResourcePool could not acquire a resource from its primary factory or source.
+-->
+
+
+<c3p0-config>
+	<default-config>
+
+		<property name="jdbcUrl">jdbc:mysql://localhost:3306/zty?useSSL=false&amp;serverTimezone=Hongkong&amp;characterEncoding=utf-8&amp;autoReconnect=true</property>		
+		<property name="driverClass">com.mysql.cj.jdbc.Driver</property>
+		<property name="user">root</property>
+		<property name="password">zty1212</property>
+		<property name="initialPoolSize">15</property>
+		<property name="minPoolSize">10</property>
+		<property name="maxPoolSize">100</property>
+		<property name="maxIdleTime">600</property>
+	</default-config>
+
+	<named-config name="oracle_config">
+		<property name="jdbcUrl">jdbc:mysql://localhost:3306/jdbc_demo</property>
+		<property name="driverClass">com.mysql.jdbc.Driver</property>
+		<property name="user">root</property>
+		<property name="password">root</property>
+		<property name="initialPoolSize">3</property>
+		<property name="maxPoolSize">6</property>
+		<property name="maxIdleTime">1000</property>
+	</named-config>
+
+
+</c3p0-config>
