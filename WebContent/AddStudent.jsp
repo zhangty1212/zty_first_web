@@ -10,8 +10,7 @@
 	<h2 align="center">添加学生信息</h2>
 
 
-	<form action="${pageContext.request.contextPath }/AddStudent"
-		method="post">
+	<form action="${pageContext.request.contextPath }/AddStudent" method="post">
 
 		<table border="1" cellspacing=0 cellPadding=0 align="center"
 			width="40%">

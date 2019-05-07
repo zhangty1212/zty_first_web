@@ -20,9 +20,9 @@
 		<property name="driverClass">com.mysql.cj.jdbc.Driver</property>
 		<property name="user">root</property>
 		<property name="password">zty1212</property>
-		<property name="initialPoolSize">15</property>
-		<property name="minPoolSize">10</property>
-		<property name="maxPoolSize">100</property>
+		<property name="initialPoolSize">10</property>
+		<property name="minPoolSize">1</property>
+		<property name="maxPoolSize">40</property>
 		<property name="maxIdleTime">600</property>
 	</default-config>
 
